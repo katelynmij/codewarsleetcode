@@ -1,15 +1,22 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-        if (nums.length == 0) {
+        // base case
+        int n = nums.length;
+        if (n < 2) {
             return 0;
         }
-        int k = 1;
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[i - 1]) {
-                nums[k] = nums[i];
-                k++;
+        // set pointers
+        int left = 0;
+        int right = 0;
+        while (right < n) {
+            if (nums[left] != nums[right]) {
+                // 0 1 1 2
+                //^  ^
+                left++;
+                nums[left] = nums[right];
             }
+            right++;
         }
-        return k;
+        return left;
     }
 }

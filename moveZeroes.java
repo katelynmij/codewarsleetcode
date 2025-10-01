@@ -3,7 +3,7 @@ public class Solution {
         // base case
         int n = nums.length();
         if (n < 2) {
-            return new int[] {0};
+            return;
         }
         // pointers
         int left = 0;
@@ -21,6 +21,5 @@ public class Solution {
                 nums[left] = tempHolder; // left is right, the non zero number
             }
         }
-        return nums;
     }
 }
