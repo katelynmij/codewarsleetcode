@@ -5,7 +5,7 @@ class Solution {
         while (left < right) {
             int currentSum = nums[left] + nums[right];
             if (currentSum == target) {
-                return new int[]{nums[left], nums[right]};
+                return new int[]{nums[left + 1], nums[right + 1]};
             } else if (currentSum < target) {
                 left++;
             } else {
